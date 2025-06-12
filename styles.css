@@ -1,0 +1,78 @@
+/* Base reset & body */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #E6E6FA; /* lilac */
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  color: #4B0082; /* indigo for contrast */
+}
+
+/* Card wrapper with perspective */
+.card-container {
+  perspective: 1000px;
+  margin-top: 2rem;
+}
+
+/* The flip-able card */
+.card {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Shared face styles */
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Front — just an image */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Back — rotated and styled */
+.card-back {
+  background: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back-content {
+  text-align: center;
+  padding: 1rem;
+}
+.back-content h2 {
+  margin-bottom: 0.5rem;
+  color: #4B0082;
+}
+.back-content p {
+  color: #333;
+}

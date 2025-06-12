@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>For My Girlfriend</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>HOLAAA AKSHYAA</h1>
+    <p>Holaa, here is a lil smth to show u how amazing you are in everyone's eyes :D</p>
+  </header>
+
+  <!-- first card -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <img src="photo1.jpeg" alt="Lovely photo"/>
+      </div>
+      <div class="card-face card-back">
+        <div class="back-content">
+          <h2>You're Amazing!</h2>
+          <p>Thanks for being you 💜</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // attach a click-flip listener to every .card
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('is-flipped');
+      });
+    });
+  </script>
+</body>
+</html>
