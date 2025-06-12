@@ -1,35 +1,68 @@
-/* Base reset & body */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #E6E6FA; /* lilac */
-  font-family: sans-serif;
-  min-height: 100vh;
+/* 1) RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Header */
+/* 2) BODY & FONT */
+body {
+  font-family: sans-serif;
+  background: #E6E6FA;    /* lilac */
+  color: #4B0082;          /* indigo text */
+  line-height: 1.5;
+}
+
+/* 3) HEADER */
 header {
   text-align: center;
   padding: 2rem 1rem;
 }
 header h1 {
-  margin-bottom: 0.5rem;
   font-size: 2rem;
-  color: #4B0082; /* indigo for contrast */
+  margin-bottom: 0.5rem;
+}
+header p {
+  opacity: 0.8;
 }
 
-/* Card wrapper with perspective */
+/* 4) GRID WRAPPER */
+.cards-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  /* two columns on desktop, one on mobile */
+  grid-template-columns: 1fr;
+  max-width: 650px;        /* two ~300px cards + gap */
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 5) HORIZONTAL ITEM SPANS BOTH */
+.card-container.horizontal {
+  grid-column: 1 / -1;
+}
+
+/* 6) ASPECT RATIOS */
+.card-container.vertical .card {
+  aspect-ratio: 9 / 16;
+}
+.card-container.horizontal .card {
+  aspect-ratio: 16 / 9;
+}
+
+/* 7) PERSPECTIVE */
 .card-container {
   perspective: 1000px;
-  margin-top: 2rem;
 }
 
-/* The flip-able card */
+/* 8) CARD BASE */
 .card {
-  width: 300px;
-  height: 400px;
+  width: 100%;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
@@ -39,7 +72,7 @@ header h1 {
   transform: rotateY(180deg);
 }
 
-/* Shared face styles */
+/* 9) CARD FACES */
 .card-face {
   position: absolute;
   width: 100%;
@@ -50,29 +83,29 @@ header h1 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Front — just an image */
+/* 10) FRONT IMAGE */
 .card-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Back — rotated and styled */
+/* 11) BACK CONTENT */
 .card-back {
   background: white;
   transform: rotateY(180deg);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.back-content {
-  text-align: center;
   padding: 1rem;
+  text-align: center;
 }
 .back-content h2 {
-  margin-bottom: 0.5rem;
   color: #4B0082;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 .back-content p {
   color: #333;
+  font-size: 0.9rem;
 }

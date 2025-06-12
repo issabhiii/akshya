@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</title>
+  <title>Your Flip-Cards</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -12,57 +12,88 @@
     <p>Holaa, here is a lil smth to show u how amazing you are in everyone's eyes :D</p>
   </header>
 
-  <!-- first card -->
-  <div class="card-container">
-    <div class="card">
-      <div class="card-face card-front">
-        <img src="img1.jpg" alt="Lovely photo"/>
-      </div>
-      <div class="card-face card-back">
-        <div class="back-content">
-          <h2>placeholder_1</h2>
-          <p>name_placeholder_1</p>
+  <div class="cards-grid">
+    <!-- 1 (vertical) -->
+    <div class="card-container vertical">
+      <div class="card">
+        <div class="card-face card-front">
+          <img src="img1.jpg" alt="photo 1"/>
+        </div>
+        <div class="card-face card-back">
+          <div class="back-content">
+            <h2>Thank you for being everything I would ever need and more, my lob (also nom)</h2>
+            <p>~ Abhii</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="card-container">
-    <div class="card">
-      <div class="card-face card-front">
-        <img src="img2.jpg" alt="Lovely photo"/>
-      </div>
-      <div class="card-face card-back">
-        <div class="back-content">
-          <h2>thank you for being such an amazing big sister❤❤</h2>
-          <p>~Ashmita Chinnakonda</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card-container">
-    <div class="card">
-      <div class="card-face card-front">
-        <img src="img3.jpg" alt="Lovely photo"/>
-      </div>
-      <div class="card-face card-back">
-        <div class="back-content">
-          <h2>She's the best step-girlfriend I could ever have 🥹</h2>
-          <h2>Also she's the only kind and well adjusted physics major I've ever met 🛐</h2>
-          <h2>And her hair is perf ❤ 🥹</h2>
-          <p>~Autumn Taylor</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
+    <!-- 2 (vertical) -->
+    <div class="card-container vertical">
+      <div class="card">
+        <div class="card-face card-front">
+          <img src="img2.jpg" alt="photo 2"/>
+        </div>
+        <div class="card-face card-back">
+          <div class="back-content">
+            <h2>Thank you for being such an amazing big sister ❤❤</h2>
+            <p>~ Ashmita Chinnakonda</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 (vertical) -->
+    <div class="card-container vertical">
+      <div class="card">
+        <div class="card-face card-front">
+          <img src="img3.jpg" alt="photo 3"/>
+        </div>
+        <div class="card-face card-back">
+          <div class="back-content">
+            <h2>She's the best step-girlfriend I could ever have 🥹</h2>
+            <h2>Also she's the only kind and well-adjusted physics major I've ever met 🛐</h2>
+            <h2>And her hair is perf ❤ 🥹</h2>
+            <p>~ Autumn Taylor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-container vertical">
+      <div class="card">
+        <div class="card-face card-front">
+          <img src="img5.jpg" alt="photo 2"/>
+        </div>
+        <div class="card-face card-back">
+          <div class="back-content">
+            <h2>Happy birthday Shree, hope you have an amazing day and I loff you 🥰</h2>
+            <p>~ Falooda (lil child)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 (horizontal: spans both columns) -->
+    <div class="card-container horizontal">
+      <div class="card">
+        <div class="card-face card-front">
+          <img src="img4.jpg" alt="photo 4"/>
+        </div>
+        <div class="card-face card-back">
+          <div class="back-content">
+            <h2>Happy birthday Akshaya!!! Hope you have a wonderful day!! You are an amazing person and have a great day!!!</h2>
+            <p>~ Tanisha Sinha</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
 
   <script>
-    // attach a click-flip listener to every .card
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', () => {
-        card.classList.toggle('is-flipped');
-      });
-    });
+    document.querySelectorAll('.card').forEach(card =>
+      card.addEventListener('click', () => card.classList.toggle('is-flipped'))
+    );
   </script>
 </body>
 </html>
