@@ -87,10 +87,26 @@ header p {
   text-align: center;
 }
 .back-content h2 {
-  margin-bottom: 0.5rem;
-  color: #4B0082;
+  /* scales between 0.9rem and 1.2rem based on viewport width */
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
 }
+
 .back-content p {
-  color: #333;
-  font-size: 0.9rem;
+  /* scales between 0.75rem and 1rem */
+  font-size: clamp(0.75rem, 2vw, 1rem);
 }
+
+/* Mobile: force all cards (even vertical) to 1-col */
+@media (max-width: 599px) {
+  .card-container.vertical {
+    flex: 0 1 100%;
+  }
+  body {
+    padding: 2rem 1.5rem;  /* top/bottom 2rem, left/right 1.5rem */
+  }
+
+  .cards-grid {
+    padding: 0.5rem;      /* a bit of inner padding around each card */
+  }
+}
+

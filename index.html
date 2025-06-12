@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</title>
+  <title>EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -59,10 +59,12 @@
         </div>
       </div>
     </div>
+
+    <!-- 4 (vertical) -->
     <div class="card-container vertical">
       <div class="card">
         <div class="card-face card-front">
-          <img src="img5.jpg" alt="photo 2"/>
+          <img src="img5.jpg" alt="photo 5"/>
         </div>
         <div class="card-face card-back">
           <div class="back-content">
@@ -72,35 +74,38 @@
         </div>
       </div>
     </div>
-    <!---------------fix  -->
+
+    <!-- 5 (vertical) -->
     <div class="card-container vertical">
       <div class="card">
         <div class="card-face card-front">
-          <img src="img6.jpg" alt="photo 1"/>
+          <img src="img6.jpg" alt="photo 6"/>
         </div>
         <div class="card-face card-back">
           <div class="back-content">
             <h2>Happy Birthday to my Childhood. To my unfiltered self. To whose presence is my therapy. Cheers to living life in the same texts and different fonts.</h2>
-            <p>~ Gayathri </p>
+            <p>~ Gayathri</p>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- 6 (vertical) -->
     <div class="card-container vertical">
       <div class="card">
         <div class="card-face card-front">
-          <img src="img7.jpg" alt="photo 1"/>
+          <img src="img7.jpg" alt="photo 7"/>
         </div>
         <div class="card-face card-back">
           <div class="back-content">
-            <h2>Happy birthday Akshaya! I know it’s been a WHILE since we last spoke but I will always remember you as such a sweet and kind person. From the day I've known you, you’ve always had a warm, positive energy that made everyone around you feel good. I hope this year brings you all the happiness you deserve, and I wish you nothing but the best in everything you do!!</h2>
+            <h2>Happy birthday Akshaya! I know it’s been a WHILE since we last spoke but I will always remember you as such a sweet and kind person. From the day I've known you, you’ve always had a warm, positive energy that made everyone around you feel good. I hope this year brings you all the happiness you deserve, and I wish you nothing but the best in everything you do!!</h2>
             <p>~ Keerthana</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 4 (horizontal: spans both columns) -->
+    <!-- 7 (horizontal: spans both columns) -->
     <div class="card-container horizontal">
       <div class="card">
         <div class="card-face card-front">
@@ -114,36 +119,33 @@
         </div>
       </div>
     </div>
-
-    
+  </div><!-- end .cards-grid -->
 
   <script>
+    // Flip-on-click
     document.querySelectorAll('.card').forEach(card =>
       card.addEventListener('click', () => card.classList.toggle('is-flipped'))
     );
-    <!-- put this just before your </body> -->
 
-    function fitText(el){
+    // Auto-fit long headings
+    function fitText(el) {
       let style = window.getComputedStyle(el);
       let fontSize = parseFloat(style.fontSize);
-      // shrink until it fits, but don’t go below 10px
-      while(el.scrollHeight > el.clientHeight && fontSize > 10){
+      while (el.scrollHeight > el.clientHeight && fontSize > 10) {
         fontSize -= 1;
         el.style.fontSize = fontSize + 'px';
       }
     }
 
-    function fitAll(){
-      document.querySelectorAll('.back-content h2').forEach(el=>{
-        el.style.fontSize = '';     // reset to your CSS default first
+    function fitAll() {
+      document.querySelectorAll('.back-content h2').forEach(el => {
+        el.style.fontSize = '';  // reset to CSS default
         fitText(el);
       });
     }
 
     window.addEventListener('load', fitAll);
     window.addEventListener('resize', fitAll);
-
-
   </script>
 </body>
 </html>
