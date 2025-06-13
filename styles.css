@@ -9,7 +9,7 @@ body {
   font-family: sans-serif;
   background: #E6E6FA; /* lilac */
   color: #4B0082;       /* indigo */
-  line-height: 1.5;
+  line-height: 1.2;
   padding: 2rem 0;
 }
 
@@ -115,3 +115,16 @@ html {
 }
 
 
+@media (max-width: 599px) {
+  /* make sure horizontal still spans full width */
+  .card-container.horizontal {
+    flex: 0 1 100%;
+  }
+
+  /* keep the 16:9 ratio but never exceed 40% of viewport height */
+  .card-container.horizontal .card {
+    aspect-ratio: 16 / 9 !important;
+    max-height: 40vh !important;
+    width: 100%;
+  }
+}
